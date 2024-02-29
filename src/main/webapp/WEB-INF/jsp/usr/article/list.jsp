@@ -3,44 +3,32 @@
 <c:set var="pageTitle" value="#{board.code } ARTICLE LIST"></c:set>
 <%@ include file="../common/head.jspf"%>
 
-<div class="board">
-    <h2>게시판 1</h2>
-    <ul>
-        <li><a href="#">글 제목 1</a></li>
-        <li><a href="#">글 제목 2</a></li>
-        <li><a href="#">글 제목 3</a></li>
-        <!-- 필요한 만큼 글 제목과 링크를 추가할 수 있습니다. -->
-    </ul>
-</div>
 
-<div class="board">
-    <h2>게시판 2</h2>
-    <ul>
-        <li><a href="#">글 제목 1</a></li>
-        <li><a href="#">글 제목 2</a></li>
-        <li><a href="#">글 제목 3</a></li>
-        <!-- 필요한 만큼 글 제목과 링크를 추가할 수 있습니다. -->
-    </ul>
-</div>
 <section class="mt-8 text-xl px-4">
-	<div class="mx-auto overflow-x-auto">
-		<div class="mb-4 flex">
-			<div class="badge badge-outline">${articlesCount }개</div>
-			<div class="flex-grow"></div>
-			<form action="">
+	<div class="mx-auto overflow-x-auto abc search-container">
+		<!-- <div class="mb-4 flex"> -->
+		<!-- <div class="badge badge-outline">${articlesCount }개</div> -->
+		<!-- <div class="flex-grow"></div> -->
+		<form action="">
+			<div>
 				<input type="hidden" name="boardId" value="${param.boardId }" />
-				<select data-value="${param.searchKeywordTypeCode }" class="select select-bordered select-sm w-full max-w-xs"
-					name="searchKeywordTypeCode">
-					<option value="title">title</option>
-					<option value="body">body</option>
-					<option value="title,body">title+body</option>
-				</select>
-				<input value="${param.searchKeyword }" name="searchKeyword" type="text" placeholder="searchKeyword?"
-					class="input-sm input input-bordered w-48 max-w-xs" />
+				<div class="a">
+					<select data-value="${param.searchKeywordTypeCode }" class=" select select-bordered select-sm w-full max-w-xs"
+						name="searchKeywordTypeCode">
+						<option value="title">제목</option>
+						<option value="body">내용</option>
+						<option value="title,body">제목+내용</option>
+					</select>
+				</div>
+				<br>
+
+				<input value="${param.searchKeyword }" name="searchKeyword" type="text" placeholder="검색어를 입력하세요...">
 				<button class="btn btn-ghost btn-sm" type="submit">검색</button>
-			</form>
-		</div>
+			</div>
+		</form>
+
 	</div>
+
 	<table class="table-box-1 table" border="1">
 		<colgroup>
 			<col style="width: 10%" />
@@ -118,6 +106,8 @@
 		</div>
 	</div>
 </section>
+
+
 
 
 

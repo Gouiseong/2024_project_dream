@@ -124,3 +124,98 @@ header>div>ul>li:hover>ul {
 .board ul li a:hover {
     text-decoration: underline;
 }
+/* 로고 이미지 */
+.navbar img {
+	display: inline-block;
+    width: 40px; /* 이미지의 너비 설정 */
+    height: auto; /* 높이 자동 조정 */
+}
+
+/* 검색창 배경 */
+.search-container {
+	
+    text-align: center;
+    margin-top: 50px;
+    background-color: red;
+}
+.search-container form{
+	display: inline-block;
+	background-color: red;
+}
+/* 검색창 */
+.search-container input[type="text"] {
+    width: 600px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 30px;
+    font-size: 20px;
+}
+
+.search-container button {
+    padding: 10px 20px;
+    background-color: #6555d2;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-left: 10px;
+}
+
+.search-container button:hover {
+    background-color: #0056b3;
+}
+/* 나중에 지울거 배경에 색줘서 알아보게 a,abc */
+.a{
+	display: inline-block;
+	width: 500px;
+	background-color:blue;
+}
+.abc{
+	
+	background-color: blue;
+}
+
+
+
+.menu-bar {
+    background-color: blue; /* 파란색 배경 색상 지정 */
+    display: inline-block; /* 메뉴 바를 가로로 정렬 */
+}
+
+.menu-bar ul {
+    list-style-type: none; /* 목록 기호 제거 */
+    padding: 0; /* 내부 간격 제거 */
+    margin: 0; /* 외부 여백 제거 */
+}
+
+.menu-bar li {
+    display: block; /* 메뉴 항목을 블록 레벨 요소로 변경하여 세로로 정렬 */
+}
+
+.menu-bar li a {
+    display: block; /* 링크를 블록 레벨 요소로 변경하여 전체 영역에 링크가 적용되도록 함 */
+    padding: 10px; /* 각 링크 주변의 여백 추가 */
+    color: white; /* 링크 텍스트 색상 지정 */
+    text-decoration: none; /* 링크 밑줄 제거 */
+}
+
+.aa{
+	display: inline-block;
+	background-color:red;
+	 padding: 20px; /* 내부 여백 추가 */
+	
+}
+.home_section{
+	justify-content: center;
+	background-color: yellow;
+}
+
+.home_section img{
+	width:600px;
+	height:300px;
+}
+
+
+
+
