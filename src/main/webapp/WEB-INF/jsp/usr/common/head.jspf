@@ -18,6 +18,7 @@
 
 <!-- 제이쿼리 불러오기 -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
 </head>
 <body>
 	<header>
@@ -25,42 +26,32 @@
 			<a class="logo" href="/">
 				<img href="/" src="https://cdn-icons-png.flaticon.com/512/768/768442.png">
 				&nbsp&nbspDream&nbsp Diary
+		
 			</a>
 			<div class="flex-grow"></div>
 			<ul class="flex">
 
-				<li>
-					<a class="hover:underline" href="../home/main">홈</a>
-				</li>
-				<li>
-					<a class="hover:underline" href="../article/list?boardId=1&page=1">게시판</a>
-					<ul>
-						<li>
-							<a class="hover:underline" href="../article/list?boardId=1&page=1">NOTICE</a>
-						</li>
-						<li>
-							<a class="hover:underline" href="../article/list?boardId=2&page=1">FREE</a>
-						</li>
-						<li>
-							<a class="hover:underline" href="../article/list?boardId=3&page=1">QnA</a>
-						</li>
-					</ul>
-				</li>
 				<c:if test="${!rq.isLogined() }">
 					<li>
 						<a class="hover:underline" href="../member/login">로그인</a>
 					</li>
 					<li>
-						<a class="hover:underline" href="../member/join">로그아웃</a>
+						<a class="hover:underline" href="../member/join">회원가입</a>
 					</li>
 				</c:if>
 				<c:if test="${rq.isLogined() }">
 					<li>
 						<a class="hover:underline" href="../article/write">글 쓰기</a>
 					</li>
+
 					<li class="hover:underline">
-						<a class="h-full px-3 flex items-center" href="/usr/member/myPage">마이페이지</a>
+						<div>
+							
+							<a class="h-full px-3 flex items-center" href="/usr/member/myPage"><img class="profile_img" src="https://cdn.pixabay.com/photo/2017/06/13/12/54/profile-2398783_960_720.png" alt="" />${loginedMember.name }</a>
+						</div>
+
 					</li>
+
 					<li>
 						<a onclick="if(confirm('로그아웃 할래?') == false) return false;" class="hover:underline" href="../member/doLogout">LOGOUT</a>
 					</li>

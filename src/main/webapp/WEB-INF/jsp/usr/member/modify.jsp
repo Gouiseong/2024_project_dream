@@ -32,10 +32,18 @@
 						</td>
 					</tr>
 					<tr>
+					<-- 이름 옆에 수정버튼을 누르면 input공간이 나오고 저장버튼이 나오게 --> 
 						<th>이름</th>
 						<td>
-							<input class="input input-bordered input-primary w-full max-w-xs" autocomplete="off" type="text"
+							<div>
+								<span>${loginedMember.name }</span>
+								<button>수정</button>
+							</div>
+						
+							<input class="input input-bordered input-primary w-full max-w-xs modify_name" autocomplete="off" type="text"
 								placeholder="이름을 입력해주세요" name="name" />
+
+
 						</td>
 					</tr>
 					<tr>
@@ -74,7 +82,6 @@
 		</div>
 	</div>
 </section>
-
 
 
 <%@ include file="../common/foot.jspf"%>

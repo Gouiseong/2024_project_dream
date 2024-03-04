@@ -1,15 +1,15 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<c:set var="pageTitle" value="#{board.code } ARTICLE LIST"></c:set>
+<c:set var="pageTitle" value=""></c:set>
 <%@ include file="../common/head.jspf"%>
 
 
 <section class="mt-8 text-xl px-4">
-	<div class="mx-auto overflow-x-auto abc search-container">
+	<div class="mx-auto overflow-x-auto search-container">
 		<!-- <div class="mb-4 flex"> -->
 		<!-- <div class="badge badge-outline">${articlesCount }개</div> -->
 		<!-- <div class="flex-grow"></div> -->
-		<form action="">
+		<form action="../article/list?boardId=${board.id }&page=1">
 			<div>
 				<input type="hidden" name="boardId" value="${param.boardId }" />
 				<div class="a">
@@ -29,31 +29,52 @@
 
 	</div>
 
-	<table class="table-box-1 table" border="1">
+
+		<div class="board-list">
+			
+			<ul class="container">
+				<li class="board-item">
+					<a href="../article/list?boardId=1&page=1">전체 글 보기</a>
+				</li>
+				<li class="board-item">
+					<a href="../article/list?boardId=2&page=1">자유 게시판</a>
+				</li>
+				<li class="board-item">
+					<a href="../article/list?boardId=3&page=1">꿈 게시판</a>
+				</li>
+				<li class="board-item">
+					<a href="../article/list?boardId=3&page=1">꿈 지식</a>
+				</li>
+				<li class="board-item">
+					<a href="../article/list?boardId=3&page=1">질문</a>
+				</li>
+				<!-- 필요한 만큼 게시판 목록을 추가하세요 -->
+			</ul>
+		</div>
+	
+	<table class="article_table">
 		<colgroup>
 			<col style="width: 10%" />
-			<col style="width: 20%" />
-			<col style="width: 60%" />
-			<col style="width: 10%" />
+			<col style="width: 50%" />
+			<col style="width: 15%" />
+			<col style="width: 5%" />
 		</colgroup>
 		<thead>
 			<tr>
-				<th>번호</th>
-				<th>날짜</th>
+				<th></th>
 				<th>제목</th>
+				<th>작성일</th>
 				<th>작성자</th>
 				<th>조회수</th>
-				<th>좋아요</th>
-				<th>싫어요</th>
-
+				<th>추천수</th>
 			</tr>
 		</thead>
 		<tbody>
 			<c:forEach var="article" items="${articles }">
-				<tr class="hover">
 
-					<td>${article.id }</td>
-					<td>${article.regDate.substring(0,10) }</td>
+
+				<tr class="hover">
+					<td>꿈 게시판</td>
 					<td>
 						<a href="detail?id=${article.id }">${article.title }
 							<c:if test="${article.extra__repliesCnt > 0 }">
@@ -61,15 +82,17 @@
 							</c:if>
 						</a>
 					</td>
+					<td>${article.regDate.substring(0,10) }</td>
 					<td>${article.extra__writer }</td>
 					<td>${article.hitCount }</td>
 					<td>${article.goodReactionPoint }</td>
-					<td>${article.badReactionPoint }</td>
+
 				</tr>
 			</c:forEach>
 		</tbody>
 	</table>
-	</div>
+
+
 
 	<!-- 	동적 페이징 -->
 	<div class="pagination flex justify-center mt-3">
@@ -106,8 +129,6 @@
 		</div>
 	</div>
 </section>
-
-
 
 
 
