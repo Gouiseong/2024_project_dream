@@ -4,6 +4,8 @@
 <%@ include file="../common/head.jspf"%>
 
 
+
+
 <section class="mt-8 text-xl px-4">
 	<div class="mx-auto overflow-x-auto search-container">
 		<!-- <div class="mb-4 flex"> -->
@@ -29,10 +31,10 @@
 
 	</div>
 
+	<div>
+		<div class="board">
 
-		<div class="board-list">
-			
-			<ul class="container">
+			<ul class="board-list">
 				<li class="board-item">
 					<a href="../article/list?boardId=1&page=1">전체 글 보기</a>
 				</li>
@@ -45,61 +47,109 @@
 				<li class="board-item">
 					<a href="../article/list?boardId=3&page=1">꿈 지식</a>
 				</li>
-				<li class="board-item">
-					<a href="../article/list?boardId=3&page=1">질문</a>
-				</li>
+
 				<!-- 필요한 만큼 게시판 목록을 추가하세요 -->
 			</ul>
 		</div>
-	
-	<table class="article_table">
-		<colgroup>
-			<col style="width: 10%" />
-			<col style="width: 50%" />
-			<col style="width: 15%" />
-			<col style="width: 5%" />
-		</colgroup>
-		<thead>
-			<tr>
-				<th></th>
-				<th>제목</th>
-				<th>작성일</th>
-				<th>작성자</th>
-				<th>조회수</th>
-				<th>추천수</th>
-			</tr>
-		</thead>
-		<tbody>
-			<c:forEach var="article" items="${articles }">
+	</div>
+	<div class="container">
 
+		<div class="center">
+			<!-- 게시글들 -->
+			<a href="">
+				<span class="write">글쓰기</span>
+				<c:if test="${rq.isLogined() }">
+					<li>
+						<a class="hover:underline" href="../article/write">글 쓰기</a>
+					</li>
+				</c:if>
+			</a>
+			<table class="article_write">
+				<colgroup>
+					<col style="width: 10%" />
+					<col style="width: 50%" />
+					<col style="width: 15%" />
+					<col style="width: 10%" />
+				</colgroup>
+				<thead>
+					<tr>
+						<th></th>
+						<th>제목</th>
+						<th>작성일</th>
+						<th>작성자</th>
+						<th>조회수</th>
+						<th>추천수</th>
+					</tr>
+				</thead>
+				<tbody>
 
-				<tr class="hover">
-					<td>꿈 게시판</td>
-					<td>
-						<a href="detail?id=${article.id }">${article.title }
-							<c:if test="${article.extra__repliesCnt > 0 }">
-								<span style="color: red;">[${article.extra__repliesCnt }]</span>
-							</c:if>
-						</a>
-					</td>
-					<td>${article.regDate.substring(0,10) }</td>
-					<td>${article.extra__writer }</td>
-					<td>${article.hitCount }</td>
-					<td>${article.goodReactionPoint }</td>
+					<c:forEach var="article" items="${articles }">
 
-				</tr>
-			</c:forEach>
-		</tbody>
-	</table>
+						<tr class="hover article_table">
+							<td>꿈 게시판</td>
+							<td>
+								<a href="detail?id=${article.id }">${article.title }
+									<c:if test="${article.extra__repliesCnt > 0 }">
+										<span style="color: red;">[${article.extra__repliesCnt }]</span>
+									</c:if>
+								</a>
+							</td>
+							<td>${article.regDate.substring(0,10) }</td>
+							<td>${article.extra__writer }</td>
+							<td>${article.hitCount }</td>
+							<td>${article.goodReactionPoint }</td>
 
+						</tr>
+					</c:forEach>
+					<!-- 추가적인 게시글 -->
+				</tbody>
+			</table>
+		</div>
+		<div class="right">
+			<!-- 로그인 버튼 -->
 
+			<ul class="flex">
+
+				<c:if test="${!rq.isLogined() }">
+					<a class="hover:underline" href="../member/login">
+						<li id="login-btn">로그인</li>
+					</a>
+				</c:if>
+				<span>
+					<c:if test="${!rq.isLogined() }">
+						<li>
+							<a class="hover:underline" href="#">비밀번호 찾기</a>
+						</li>
+					</c:if>
+				</span>
+				<span>
+					<c:if test="${!rq.isLogined() }">
+						<li>
+							<a class="hover:underline" href="../member/join">회원가입</a>
+						</li>
+					</c:if>
+				</span>
+			</ul>
+			<ul class="flex">
+
+				<c:if test="${rq.isLogined() }">
+					<a class="hover:underline" href="../member/login">
+						<li id="login-btn">마이페이지</li>
+					</a>
+
+					<li>
+						<a onclick="if(confirm('로그아웃 할래?') == false) return false;" class="hover:underline" href="../member/doLogout">로그아웃</a>
+					</li>
+				</c:if>
+			</ul>
+		</div>
+	</div>
 
 	<!-- 	동적 페이징 -->
 	<div class="pagination flex justify-center mt-3">
 		<c:set var="paginationLen" value="3" />
 		<c:set var="startPage" value="${page -  paginationLen  >= 1 ? page - paginationLen : 1}" />
 		<c:set var="endPage" value="${page +  paginationLen  <= pagesCount ? page + paginationLen : pagesCount}" />
-
 		<c:set var="baseUri" value="?boardId=${boardId }" />
 		<c:set var="baseUri" value="${baseUri }&searchKeywordTypeCode=${searchKeywordTypeCode}" />
 		<c:set var="baseUri" value="${baseUri }&searchKeyword=${searchKeyword}" />
@@ -128,8 +178,8 @@
 			</c:forEach>
 		</div>
 	</div>
-</section>
 
+</section>
 
 
 <%@ include file="../common/foot.jspf"%>

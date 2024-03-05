@@ -110,11 +110,6 @@ header>div>ul>li:hover>ul {
 
 .board ul {
 	list-style-type: none;
-	padding: 0;
-}
-
-.board ul li {
-	margin-bottom: 5px;
 }
 
 .board ul li a {
@@ -168,7 +163,7 @@ header>div>ul>li:hover>ul {
 
 .menu-bar {
 	display: flex; /* 메뉴 바를 가로로 정렬 */
-	background-color: red;
+	background-color: #232323;
 }
 
 .menu-bar ul {
@@ -177,21 +172,11 @@ header>div>ul>li:hover>ul {
 	margin: 0; /* 외부 여백 제거 */
 }
 
-.menu-bar li {
-	/* 메뉴 항목을 블록 레벨 요소로 변경하여 세로로 정렬 */
-	
-}
-
 .menu-bar li a {
 	display: block; /* 링크를 블록 레벨 요소로 변경하여 전체 영역에 링크가 적용되도록 함 */
 	padding: 10px; /* 각 링크 주변의 여백 추가 */
 	color: white; /* 링크 텍스트 색상 지정 */
 	text-decoration: none; /* 링크 밑줄 제거 */
-}
-
-.aa {
-	display: flex;
-	padding: 20px; /* 내부 여백 추가 */
 }
 
 .home_section {
@@ -208,27 +193,111 @@ body {
 	font-family: Arial, sans-serif;
 	margin: 0;
 	padding: 0;
+	height: 952px;
+	bottom: 0;
+	right: 0;
 }
 
 /* list jsp css */
-.board-list {
+.write {
+	float: right;
+	padding: 10px 40px;
+	background-color: #7F27FF;
+	border-radius: 30px;
+	margin-bottom: 10px;
+}
+
+.list_body_img {
+	background-image:
+		url('https://e0.pxfuel.com/wallpapers/935/1007/desktop-wallpaper-night-sky-background-high-resolution.jpg');
+	/* 이미지 경로 설정 */
+	background-size: cover; /* 이미지를 화면에 꽉 채우도록 설정 */
+	background-attachment: fixed; /* 이미지를 스크롤에 고정 */
+	background-position: center; /* 이미지를 화면의 가운데로 정렬 */
+	margin: 0; /* 기본 마진 제거 */
+	padding: 0; /* 기본 패딩 제거 */
+	font-family: Arial, sans-serif; /* 기본 폰트 설정 */
+}
+
+.board {
 	background-color: #333;
-	padding: 20px;
 }
 
 .board-item:hover {
-	background-color: lightgray;
 	cursor: pointer;
 }
 
 .board-item {
 	padding: 10px;
 	display: inline-block;
-	border: solid 1px blue;
-	display: inline-block;
 }
 
-/* 게시글 목록 css*/
+.container {
+	display: flex;
+	grid-template-columns: 80% 21%;
+	grid-template-rows: 100%;
+	height: 100%;
+}
+
+.left, .center, .right {
+	overflow-y: auto;
+	padding: 20px;
+}
+
+.center {
+	flex: 3;
+	background-color: #333;
+	border-radius: 5px;
+}
+
+.right {
+	flex: 1;
+	text-align: center;
+	border: solid 1px black;
+	border-radius: 10px;
+}
+/* 게시글 테이블 스타일링 */
+.article_write {
+	width: 100%;
+	border-collapse: collapse;
+}
+
+article_write th, td {
+	border: 1px solid #ccc;
+	padding: 8px;
+	text-align: left;
+}
+
+th {
+	background-color: #f0f0f0;
+}
+/* 게시글 제목 스타일링 */
+.post-title {
+	cursor: pointer;
+	color: #007bff;
+	font-size: 18px;
+	margin-bottom: 10px;
+}
+/* 로그인 버튼 스타일링 */
+#login-btn {
+	display: block;
+	margin-left: 45px;
+	padding: 20px;
+	background-color: #007bff;
+	color: #fff;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+	width: 70%;
+	font-size: 20px;
+	padding: 20px;
+}
+/* 게시글 목록 css */
+/* 게시글 목록 스타일링 */
+.article_table {
+	background-color: #ADBC9F;
+}
+
 table {
 	width: 100%;
 	border-collapse: collapse;
@@ -255,26 +324,26 @@ th {
 }
 
 /* main jsp에서 사용하는 css */
-.aa>.menu-bar li {
+.menu-bar li {
 	border-radius: 10px;
-	border: solid 2px blue;
 }
 
 .board-list a:visited {
 	color: white; /* 현재 요소의 상속된 색상 유지 */
 }
 
-
 .img_text {
 	text-align: center; /* 텍스트를 가운데 정렬 */
 	text-decoration: none; /* 링크의 기본 밑줄 제거 */
-	color: black; /* 텍스트 색상 지정 */
+	color: white; /* 텍스트 색상 지정 */
 	display: block; /* 텍스트를 블록 요소로 변경하여 이미지 아래에 위치시킴 */
 }
-.img li{
+
+.img li {
 	display: inline-block;
 	justify-content: space-around;
 }
+
 .img img {
 	display: block; /* 이미지를 블록 요소로 변경하여 가로 정렬을 쉽게 함 */
 	margin-bottom: 5px; /* 이미지 아래 여백 추가 */
@@ -283,7 +352,6 @@ th {
 	border-radius: 30px;
 	margin-bottom: 5px;
 }
-
 
 /* paint jsp css */
 #drawing-board {
@@ -294,4 +362,128 @@ th {
 	border-radius: 5px;
 	border: 1px solid black;
 	padding: 0 10px;
+}
+
+/* login jsp css */
+@import url(https://fonts.googleapis.com/css?family=Roboto:300);
+
+.easy_login >div {
+	display:inline-block;
+}
+
+.logo_img {
+	max-width: 100%; /* 부모 요소의 너비에 맞게 이미지 크기 조절 */
+	height: auto;
+	/* 가로 세로 비율 유지 */
+	height: auto;
+	position: absolute;
+}
+
+.login-page {
+	float: right;
+	width: 800px;
+	padding: 8% 0 0;
+	margin-right: 10%;
+}
+
+.form {
+	position: relative;
+	z-index: 1;
+	background: #FFFFFF;
+	max-width: 400px;
+	height: 600px;
+	padding: 45px;
+	text-align: center;
+	box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0
+		rgba(0, 0, 0, 0.24);
+	opacity: 0.8; /* 이미지의 투명도를 50%로 설정 */
+	background-color: #81689D;
+	border-radius: 30px;
+}
+
+.form input {
+	font-family: "Roboto", sans-serif;
+	outline: 0;
+	background: #f2f2f2;
+	width: 100%;
+	border: 0;
+	margin: 0 0 15px;
+	padding: 15px;
+	box-sizing: border-box;
+	font-size: 14px;
+	border: solid 1px black;
+}
+
+.form .login_btn, .form .join_btn {
+	font-family: "Roboto", sans-serif;
+	text-transform: uppercase;
+	outline: 0;
+	background: #4CAF50;
+	width: 100%;
+	border: 0;
+	padding: 15px;
+	color: #FFFFFF;
+	font-size: 14px;
+	-webkit-transition: all 0.3 ease;
+	transition: all 0.3 ease;
+	cursor: pointer;
+}
+
+.form button:hover, .form button:active, .form button:focus {
+	background: #43A047;
+}
+
+.form .message {
+	margin: 15px 0 0;
+	color: #b3b3b3;
+	font-size: 12px;
+}
+
+.form .message a {
+	color: #4CAF50;
+	text-decoration: none;
+}
+
+.form .register-form {
+	display: none;
+}
+
+.container {
+	position: relative;
+	z-index: 1;
+	max-width: 300px;
+	margin: 0 auto;
+}
+
+.container:before, .container:after {
+	content: "";
+	display: block;
+	clear: both;
+}
+
+.container .info {
+	margin: 50px auto;
+	text-align: center;
+}
+
+.container .info h1 {
+	margin: 0 0 15px;
+	padding: 0;
+	font-size: 36px;
+	font-weight: 300;
+	color: #1a1a1a;
+}
+
+.container .info span {
+	color: #4d4d4d;
+	font-size: 12px;
+}
+
+.container .info span a {
+	color: #000000;
+	text-decoration: none;
+}
+
+.container .info span .fa {
+	color: #EF3B3A;
 }

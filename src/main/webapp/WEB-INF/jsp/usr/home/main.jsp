@@ -2,27 +2,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <c:set var="pageTitle" value="MAIN"></c:set>
 <%@ include file="../common/head.jspf"%>
-<section class="home_section">
-	<div class="aa">
-		<div class="menu-bar">
-			<ul>
-				<li>
-					<a href="../article/list?boardId=1&page=1"">글 보러가기</a>
-				</li>
-				<li>
-					<a href="../paint/painting">그림 그리기</a>
-				</li>
-				<li>
-					<a href="#">ai그림 가져오기</a>
-				</li>
 
-				<!-- 필요한 만큼 메뉴 항목을 추가하세요 -->
-			</ul>
-		</div>
-	</div>
-
-
-</section>
 <div class="img">
 	<div class="menu-bar">
 		<ul>
@@ -39,7 +19,11 @@
 				</a>
 			</li>
 			<li>
-				<a href="#">ai그림 가져오기</a>
+
+				<a href="#">
+					<img src="https://fly.storage.tigris.dev/pai-images/2374d939ee014eeeb3b8db767d0f91ba.jpeg" alt="귀여운고양이" />
+					<span class="img_text">ai그림 가져오기</span>
+				</a>
 			</li>
 
 			<!-- 필요한 만큼 메뉴 항목을 추가하세요 -->
