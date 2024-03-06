@@ -339,16 +339,16 @@ th {
 	display: block; /* 텍스트를 블록 요소로 변경하여 이미지 아래에 위치시킴 */
 }
 
-.img li {
+.main_img li {
 	display: inline-block;
 	justify-content: space-around;
 }
 
-.img img {
+.main_img img {
 	display: block; /* 이미지를 블록 요소로 변경하여 가로 정렬을 쉽게 함 */
 	margin-bottom: 5px; /* 이미지 아래 여백 추가 */
-	width: 300px;
-	height: 300px;
+	width: 250px;
+	height: 250px;
 	border-radius: 30px;
 	margin-bottom: 5px;
 }
@@ -367,11 +367,11 @@ th {
 /* login jsp css */
 @import url(https://fonts.googleapis.com/css?family=Roboto:300);
 
-.easy_login >div {
-	display:inline-block;
+.easy_login>div {
+	display: inline-block;
 }
 
-.logo_img {
+.background_img {
 	max-width: 100%; /* 부모 요소의 너비에 맞게 이미지 크기 조절 */
 	height: auto;
 	/* 가로 세로 비율 유지 */

@@ -3,7 +3,7 @@
 <c:set var="pageTitle" value="MAIN"></c:set>
 <%@ include file="../common/head.jspf"%>
 
-<div class="img">
+<div class="main_img">
 	<div class="menu-bar">
 		<ul>
 			<li>
@@ -25,16 +25,18 @@
 					<span class="img_text">ai그림 가져오기</span>
 				</a>
 			</li>
+			<li>
+				<c:if test="${rq.isLogined() }">
 
+					<a href="#">
+						<img class="moons_img" src="https://fly.storage.tigris.dev/pai-images/5959c8f61c5849609caec7e00487444b.jpeg"
+							alt="">
+						<span class="img_text">심리테스트 하러가기</span>
+					</a>
+				</c:if>
+			</li>
 			<!-- 필요한 만큼 메뉴 항목을 추가하세요 -->
 		</ul>
 	</div>
-	<img class="moons_img" src="https://fly.storage.tigris.dev/pai-images/f4d16d6590dc4ab4a00765f71ae8fe7f.jpeg"
-		alt="눈감고있는 소녀">
-
-	<img src="https://fly.storage.tigris.dev/pai-images/75dd8f778e7447b38813bf823d08a2bc.jpeg" alt="눈 뜬 고양이" />
-	<img src="https://fly.storage.tigris.dev/pai-images/0c015f25590246878c51916a1931a5bb.jpeg" alt="책읽는 강아지" />
-	<img src="https://fly.storage.tigris.dev/pai-images/2374d939ee014eeeb3b8db767d0f91ba.jpeg" alt="책읽는 강아지 애니" />
-	<img src="https://fly.storage.tigris.dev/pai-images/9dff66ac5d10418793018daac8fe5634.jpeg" alt="잠자는 고양이" />
 </div>
 <%@ include file="../common/foot.jspf"%>

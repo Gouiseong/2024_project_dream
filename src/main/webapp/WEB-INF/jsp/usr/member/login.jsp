@@ -31,13 +31,15 @@
 				</tbody>
 			</table>
 		</form>  --%>
-<img class="logo_img" src="https://a-static.besthdwallpaper.com/night-sky-moon-scenery-wallpaper-1920x1080-99588_48.jpg"
+<img class="
+background_img" src="https://a-static.besthdwallpaper.com/night-sky-moon-scenery-wallpaper-1920x1080-99588_48.jpg"
 	alt="" />
 <div class="login-page">
 	<div class="form">
-		<form class="login-form" autocomplete="off" action="../member/doLogin">
-			<input type="text" placeholder="아이디" name="loginId"/>
-			<input type="password" placeholder="비밀번호" name="loginPw"/>
+		<form class="login-form" autocomplete="off" action="../member/doLogin" method="post">
+			<input type="hidden" name="afterLoginUri" value="${param.afterLoginUri }" />
+			<input type="text" placeholder="아이디" name="loginId" />
+			<input type="password" placeholder="비밀번호" name="loginPw" />
 			<button class="login_btn" type="submit">로그인</button>
 			<p class="message">
 				<a href="#">비밀번호 찾기</a>
@@ -57,10 +59,11 @@
 			</div>
 		</form>
 
-		<form class="register-form" action="../member/doJoin">
+		<form class="register-form" action="../member/doJoin" method="post">
+			<input type="hidden" name="afterLoginUri" value="${param.afterLoginUri }" />
 			<input type="text" placeholder="이름" name="name" />
 			<input type="text" placeholder="아이디" name="loginId" />
-			<button class="check_btn"onclick="checkDuplicate()">아이디 중복 확인</button>
+			<button class="check_btn" onclick="checkDuplicate()">아이디 중복 확인</button>
 			<input type="text" placeholder="이메일" name="email" />
 			<input type="password" placeholder="비밀번호" name="loginPw" />
 			<input type="password" placeholder="비밀번호 확인" name="loginPwCheck" />

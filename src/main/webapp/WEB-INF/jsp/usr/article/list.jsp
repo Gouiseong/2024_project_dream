@@ -44,9 +44,11 @@
 				<li class="board-item">
 					<a href="../article/list?boardId=3&page=1">꿈 게시판</a>
 				</li>
-				<li class="board-item">
-					<a href="../article/list?boardId=3&page=1">꿈 지식</a>
-				</li>
+				<c:if test="${rq.isLogined() }">
+					<li class="board-item">
+						<a href="../article/list?boardId=3&page=1">내 일지</a>
+					</li>
+				</c:if>
 
 				<!-- 필요한 만큼 게시판 목록을 추가하세요 -->
 			</ul>
@@ -57,11 +59,13 @@
 		<div class="center">
 			<!-- 게시글들 -->
 			<a href="">
-				<span class="write">글쓰기</span>
+
 				<c:if test="${rq.isLogined() }">
-					<li>
-						<a class="hover:underline" href="../article/write">글 쓰기</a>
-					</li>
+
+					<a class="hover:underline" href="../article/write">
+						<span class="write">글쓰기</span>
+					</a>
+
 				</c:if>
 			</a>
 			<table class="article_write">
@@ -133,7 +137,7 @@
 			<ul class="flex">
 
 				<c:if test="${rq.isLogined() }">
-					<a class="hover:underline" href="../member/login">
+					<a class="hover:underline" href="../member/myPage">
 						<li id="login-btn">마이페이지</li>
 					</a>
 
