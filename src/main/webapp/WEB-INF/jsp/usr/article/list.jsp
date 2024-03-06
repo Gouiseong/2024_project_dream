@@ -45,7 +45,7 @@
 					<a href="../article/list?boardId=3&page=1">꿈 게시판</a>
 				</li>
 				<c:if test="${rq.isLogined() }">
-					<li class="board-item">
+					<li class="board-item" onclick="../member/">
 						<a href="../article/list?boardId=3&page=1">내 일지</a>
 					</li>
 				</c:if>
@@ -185,5 +185,42 @@
 
 </section>
 
+<div class="slideshow-container">
+		<!-- 슬라이드 1 -->
+		<div class="slide">
+			<img src="https://fly.storage.tigris.dev/pai-images/f9664893160c4c57a2bdc9796946edad.jpeg" alt="Slide 1">
+		</div>
+		<!-- 슬라이드 2 -->
+		<div class="slide">
+			<img src="https://fly.storage.tigris.dev/pai-images/bbaabf6914ee44d49ee02ed2c6f93c5f.jpeg" alt="Slide 2">
+		</div>
+		<!-- 슬라이드 3 -->
+		<div class="slide">
+			<img src="https://fly.storage.tigris.dev/pai-images/6f339e1be2d94c57a75bd55c05dc41fc.jpeg" alt="Slide 3">
+		</div>
+		<!-- 이전, 다음 버튼 -->
+		<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+		<a class="next" onclick="plusSlides(1)">&#10095;</a>
+	</div>
 
+<!-- JavaScript 코드 -->
+<script>
+    let slideIndex = 0;
+    showSlides();
+
+    function plusSlides(n) {
+        showSlides(slideIndex += n);
+    }
+
+    function showSlides() {
+        let slides = document.getElementsByClassName("slide");
+        for (let i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+        slideIndex++;
+        if (slideIndex > slides.length) {slideIndex = 1}
+        slides[slideIndex - 1].style.display = "block";
+        setTimeout(showSlides, 4000); // 4초마다 자동으로 슬라이드 전환
+    }
+</script>
 <%@ include file="../common/foot.jspf"%>
