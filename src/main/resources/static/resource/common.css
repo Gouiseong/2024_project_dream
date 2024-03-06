@@ -319,17 +319,21 @@ th {
 	font-size: 18px;
 	margin-bottom: 10px;
 }
+
+.flex {
+	justify-content: center;
+}
+
 /* 로그인 버튼 스타일링 */
 #login-btn {
 	display: block;
-	margin-left: 45px;
 	padding: 20px;
 	background-color: #007bff;
 	color: #fff;
 	border: none;
 	border-radius: 5px;
 	cursor: pointer;
-	width: 70%;
+	width: 300px;
 	font-size: 20px;
 	padding: 20px;
 }
@@ -530,56 +534,56 @@ th {
 }
 
 /* mypage jsp css*/
- .hero {
-        /* 섹션 요소의 최대 너비를 100%로 설정 */
-        max-width: 100%;
-        /* 배경색 설정 */
-        background-color: #957BB3;
-        /* 글자색 설정 */
-        color: #555400;
-    }
+.hero {
+	/* 섹션 요소의 최대 너비를 100%로 설정 */
+	max-width: 100%;
+	/* 배경색 설정 */
+	background-color: #957BB3;
+	/* 글자색 설정 */
+	color: #555400;
+}
 
-    .content {
-        /* 컨텐츠 영역을 flex로 표시하고 세로 중앙 정렬 */
-        display: flex;
-        align-items: center; /* 세로 중앙 정렬 */
-        /* 섹션 요소의 최대 너비를 100%로 설정 */
-        max-width: 100%;
-        /* 좌우 여백을 자동으로 설정하고 가운데 정렬 */
-        margin: 0 auto;
-        background-color: red;
-    }
+.content {
+	/* 컨텐츠 영역을 flex로 표시하고 세로 중앙 정렬 */
+	display: flex;
+	align-items: center; /* 세로 중앙 정렬 */
+	/* 섹션 요소의 최대 너비를 100%로 설정 */
+	max-width: 100%;
+	/* 좌우 여백을 자동으로 설정하고 가운데 정렬 */
+	margin: 0 auto;
+	background-color: red;
+}
 
-    .my-picture {
-        /* 이미지 우측에 여백을 주어 이미지와 내용 사이의 간격 조절 */
-        margin-right: 50px; /* 이미지와 내용 사이 간격 조절 */
-        /* 이미지의 폭을 100px로 설정 */
-        width: 100px;
-        /* 이미지의 높이를 자동으로 설정하여 비율 유지 */
-        height: auto; /* 이미지 비율 유지 */
-    }
+.my-picture {
+	/* 이미지 우측에 여백을 주어 이미지와 내용 사이의 간격 조절 */
+	margin-right: 50px; /* 이미지와 내용 사이 간격 조절 */
+	/* 이미지의 폭을 100px로 설정 */
+	width: 100px;
+	/* 이미지의 높이를 자동으로 설정하여 비율 유지 */
+	height: auto; /* 이미지 비율 유지 */
+}
 
-    .iama {
-        /* 글자색 설정 */
-        color: #555400;
-        /* 글자 간격 설정 */
-        letter-spacing: 0.05em;
-        /* 글자 크기 설정 */
-        font-size: 20px;
-        /* 위, 아래 여백을 제거 */
-        margin: 0;
-    }
+.iama {
+	/* 글자색 설정 */
+	color: #555400;
+	/* 글자 간격 설정 */
+	letter-spacing: 0.05em;
+	/* 글자 크기 설정 */
+	font-size: 20px;
+	/* 위, 아래 여백을 제거 */
+	margin: 0;
+}
 
-    .my-info {
-        /* 글자 크기 설정 */
-        font-size: 22px;
-        /* 위, 아래 여백을 제거 */
-        margin: 0;
-        /* 글자색 설정 */
-        color: black;
-    }
+.my-info {
+	/* 글자 크기 설정 */
+	font-size: 22px;
+	/* 위, 아래 여백을 제거 */
+	margin: 0;
+	/* 글자색 설정 */
+	color: black;
+}
 
-    .my-name {
-        /* 이름 텍스트의 글자색 설정 */
-        color: black;
-    }
+.my-name {
+	/* 이름 텍스트의 글자색 설정 */
+	color: black;
+}

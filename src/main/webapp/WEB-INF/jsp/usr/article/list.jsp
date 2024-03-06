@@ -112,27 +112,13 @@
 		<div class="right">
 			<!-- 로그인 버튼 -->
 
-			<ul class="flex">
-
+			<ul class="flex login-btn-container">
+			
 				<c:if test="${!rq.isLogined() }">
 					<a class="hover:underline" href="../member/login">
 						<li id="login-btn">로그인</li>
 					</a>
 				</c:if>
-				<span>
-					<c:if test="${!rq.isLogined() }">
-						<li>
-							<a class="hover:underline" href="#">비밀번호 찾기</a>
-						</li>
-					</c:if>
-				</span>
-				<span>
-					<c:if test="${!rq.isLogined() }">
-						<li>
-							<a class="hover:underline" href="../member/join">회원가입</a>
-						</li>
-					</c:if>
-				</span>
 			</ul>
 			<ul class="flex">
 
@@ -186,22 +172,22 @@
 </section>
 
 <div class="slideshow-container">
-		<!-- 슬라이드 1 -->
-		<div class="slide">
-			<img src="https://fly.storage.tigris.dev/pai-images/f9664893160c4c57a2bdc9796946edad.jpeg" alt="Slide 1">
-		</div>
-		<!-- 슬라이드 2 -->
-		<div class="slide">
-			<img src="https://fly.storage.tigris.dev/pai-images/bbaabf6914ee44d49ee02ed2c6f93c5f.jpeg" alt="Slide 2">
-		</div>
-		<!-- 슬라이드 3 -->
-		<div class="slide">
-			<img src="https://fly.storage.tigris.dev/pai-images/6f339e1be2d94c57a75bd55c05dc41fc.jpeg" alt="Slide 3">
-		</div>
-		<!-- 이전, 다음 버튼 -->
-		<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-		<a class="next" onclick="plusSlides(1)">&#10095;</a>
+	<!-- 슬라이드 1 -->
+	<div class="slide">
+		<img src="https://fly.storage.tigris.dev/pai-images/f9664893160c4c57a2bdc9796946edad.jpeg" alt="Slide 1">
 	</div>
+	<!-- 슬라이드 2 -->
+	<div class="slide">
+		<img src="https://fly.storage.tigris.dev/pai-images/bbaabf6914ee44d49ee02ed2c6f93c5f.jpeg" alt="Slide 2">
+	</div>
+	<!-- 슬라이드 3 -->
+	<div class="slide">
+		<img src="https://fly.storage.tigris.dev/pai-images/6f339e1be2d94c57a75bd55c05dc41fc.jpeg" alt="Slide 3">
+	</div>
+	<!-- 이전, 다음 버튼 -->
+	<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+	<a class="next" onclick="plusSlides(1)">&#10095;</a>
+</div>
 
 <!-- JavaScript 코드 -->
 <script>
@@ -220,7 +206,7 @@
         slideIndex++;
         if (slideIndex > slides.length) {slideIndex = 1}
         slides[slideIndex - 1].style.display = "block";
-        setTimeout(showSlides, 4000); // 4초마다 자동으로 슬라이드 전환
+        setTimeout(showSlides, 3000); // 4초마다 자동으로 슬라이드 전환
     }
 </script>
 <%@ include file="../common/foot.jspf"%>

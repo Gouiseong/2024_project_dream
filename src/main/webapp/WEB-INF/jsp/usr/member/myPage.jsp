@@ -54,22 +54,22 @@
 		<div class="content">
 			<img class="my-picture" src="https://cdn.pixabay.com/photo/2017/06/13/12/54/profile-2398783_960_720.png"
 				alt="This is a picture of me">
-			<!-- 정보를 담는 div -->
 			<div class="info">
-				<!-- "이름"이라는 텍스트 출력 -->
 				<p class="iama">이름</p>
-				<!-- 로그인된 회원의 이름을 출력하는 부분 -->
 				<p class="my-name my-info">${loginedMember.name}</p>
-				<!-- "전화번호"라는 텍스트 출력 -->
-				<p class="iama">전화번호</p>
-				<!-- 로그인된 회원의 전화번호를 출력하는 부분 -->
-				<p class="my-info">${loginedMember.cellphoneNum}</p>
-				<!-- "이메일"이라는 텍스트 출력 -->
 				<p class="iama">이메일</p>
-				<!-- 로그인된 회원의 이메일을 출력하는 부분 -->
+				<p class="my-info">${loginedMember.email}</p>
+				<p class="iama">전화번호</p>
+				<p class="my-info">${loginedMember.cellphoneNum}</p>
+				<p class="iama">생년월일</p>
 				<p class="my-info">${loginedMember.email}</p>
 			</div>
-			<!-- 정보를 담는 div 종료 -->
+
+		</div>
+		<div class="">
+			<button>비밀번호 변경</button>
+			<button>정보 수정</button>
+			<button>계정 삭제</button>
 		</div>
 	</section>
 	<div class="btns">
